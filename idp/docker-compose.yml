@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  idp.api:
+    image: ei8works/idp.api:0.1.5
+    env_file:
+      - ./variables.env
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:${HOST_PORT};http://+:80
+    expose:
+      - "80"
+      - "${HOST_PORT}"
+    ports:
+      - ${HOST_IP}:${HOST_PORT}:${HOST_PORT}
+    volumes:
+      - ./:/C/db
+      - ~/.aspnet/https:/https:ro
+      - ./customSettings.json:/app/appsettings.json
