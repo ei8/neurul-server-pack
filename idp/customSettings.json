@@ -7,12 +7,22 @@
         "DisplayName": "ei8 Avatar - sample",
         "Scopes": [ "avatarapi-sample" ],
         "ApiSecrets": [ { "Value": "" } ]
+      },
+      {
+        "Name": "avatarapi-sample2",
+        "DisplayName": "ei8 Avatar - sample2",
+        "Scopes": [ "avatarapi-sample2" ],
+        "ApiSecrets": [ { "Value": "" } ]
       }
     ],
     "ApiScopes": [
       {
         "Name": "avatarapi-sample",
         "DisplayName": "ei8 Avatar - sample"
+      },
+      {
+        "Name": "avatarapi-sample2",
+        "DisplayName": "ei8 Avatar - sample2"
       }
     ],
     "Clients": [
@@ -21,15 +31,31 @@
         "ClientName": "ei8 d# - sample",
         "AllowOfflineAccess": true,
         "AccessTokenLifetime": 120,
-        "RequireConsent": true,
+        "RequireConsent": true,	
         "RequirePkce": true,
         "AllowedGrantTypes": [ "authorization_code" ],
         "ClientSecrets": [ { "Value": "" } ],
         "RedirectUris": [ "https://neurul.net/sample/nc/Account/LoginCallback" ],
         "PostLogoutRedirectUris": [ "https://neurul.net/sample/nc/Account/LogoutCallback" ],
-        "AllowedScopes": [ "openid", "profile", "email", "avatarapi-sample" ],
+        "AllowedScopes": [ "openid", "profile", "email", "avatarapi-sample", "avatarapi-sample2"],
         "RefreshTokenUsage": 0,
         "Enabled": true
+      },
+      {
+        "ClientId": "ei8.Cortex.Chat-sample",
+        "ClientName": "ei8 Cortex Chat - sample",
+        "AllowedGrantTypes": [ "authorization_code" ],
+        "ClientSecrets": [ { "Value": "" } ],
+        "RedirectUris": [ "ei8cortexchat://" ],
+        "PostLogoutRedirectUris": [ "ei8cortexchat://" ],
+        "AllowedScopes": [ "openid", "profile", "avatarapi-sample" ],
+      },
+      {
+        "ClientId": "ei8.Cortex.Chat.Nucleus-sample",
+        "ClientName": "ei8 Cortex Chat Nucleus - sample",
+        "AllowedGrantTypes": [ "client_credentials" ],
+        "ClientSecrets": [ { "Value": "" } ],
+        "AllowedScopes": [ "openid", "profile", "avatarapi-sample2" ]
       }
     ]
   }
