@@ -7,7 +7,9 @@ services:
       - ./variables.env
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:${HOST_PORT};http://+:80
+      - ASPNETCORE_URLS=https://+:${HOST_PORT};http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     expose:
       - "80"
       - "${HOST_PORT}"
